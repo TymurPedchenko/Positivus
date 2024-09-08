@@ -1,0 +1,143 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--section-padding-y);
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 35px;
+
+    max-width: 531px;
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__title {
+    order: -2;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  &__button {
+    @include mobile {
+      margin-inline: auto;
+
+      width: 100%;
+      max-width: 390px;
+    }
+  }
+
+  &__image {
+    @include mobile {
+      order: -1;
+      margin-bottom: 20px;
+
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include mobile-above {
+      max-width: 40%;
+      height: auto;
+    }
+
+    @include tablet-above {
+      max-width: 100%;
+    }
+
+    @include desktop-above {
+      max-width: 100%;
+    }
+  }
+
+  &__partners {
+    &-list {
+      column-gap: 37px;
+
+      @include mobile-s {
+        ---heroPartnersWidthOffsetX: 60px;
+
+        margin-left: calc(
+          (var(---heroPartnersWidthOffsetX) + var(--container-padding-x)) * -1
+        );
+        column-gap: 0;
+
+        width: calc(100vw + var(---heroPartnersWidthOffsetX) * 2);
+      }
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+      }
+
+      @include mobile-above {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+      }
+
+      @include tablet-above {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-item {
+      @include mobile {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include mobile-s {
+        display: flex;
+        justify-content: start;
+
+        &:nth-child(-n + 3) {
+          justify-content: flex-end;
+        }
+      }
+
+      @include mobile-above {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include tablet-above {
+        display: block;
+      }
+    }
+
+    &-image {
+      @include hover {
+        filter: grayscale(0);
+      }
+
+      filter: grayscale(1);
+    }
+  }
+}

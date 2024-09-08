@@ -1,0 +1,68 @@
+.banner {
+  padding-block: var(--bannerImageOffsetY);
+
+  @include mobile-s {
+    --bannerImageOffsetY: 0;
+  }
+
+  @include mobile-s-above {
+    --bannerImageOffsetY: 0;
+  }
+
+  @include tablet-above {
+    --bannerImageOffsetY: 24px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 26px;
+
+    @include mobile-s {
+      padding: 50px;
+    }
+
+    @include mobile-s-above {
+      padding: 50px;
+    }
+
+    @include mobile {
+      row-gap: 20px;
+    }
+
+    @include tablet-above {
+      padding: 60px;
+    }
+  }
+
+  &__description {
+    max-width: 500px;
+  }
+
+  &__image {
+    margin: calc(var(--bannerImageOffsetY) * -1);
+
+    @include mobile-s {
+      max-width: 40%;
+      height: auto;
+    }
+
+    @include mobile-s-above {
+      max-width: 40%;
+    }
+
+    @include tablet-above {
+      max-width: 100%;
+    }
+  }
+}
