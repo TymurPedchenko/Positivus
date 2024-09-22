@@ -1,0 +1,76 @@
+.team-card {
+  height: 100%;
+
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  @include mobile-s {
+    padding: 40px 30px;
+  }
+
+  @include mobile-s-above {
+    padding: 40px 50px;
+  }
+
+  @include mobile-above {
+    padding: 40px 35px;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__image {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__info {
+    align-self: flex-end;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    @include flex-center;
+    @include square(34px);
+
+    align-self: start;
+    margin-left: auto;
+    flex-shrink: 0;
+
+    color: var(--color-accent);
+
+    background-color: var(--color-dark);
+    border-radius: 50%;
+  }
+
+  &__name {
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__body {
+    margin-top: var(--teamCardBodyMarginTop);
+    padding-top: var(--teamCardBodyMarginTop);
+
+    border-top: var(--border);
+
+    @include mobile-s {
+      --teamCardBodyMarginTop: 20px;
+    }
+
+    @include mobile-s-above {
+      --teamCardBodyMarginTop: 20px;
+    }
+
+    @include mobile-above {
+      --teamCardBodyMarginTop: 28px;
+    }
+  }
+}

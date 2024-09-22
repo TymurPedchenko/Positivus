@@ -22,4 +22,16 @@
 
     background-color: transparent;
   }
+
+  &--accent {
+    color: var(--color-black);
+
+    background-color: var(--color-accent);
+
+    @include hover {
+      color: var(--color-accent);
+
+      background-color: var(--color-dark);
+    }
+  }
 }

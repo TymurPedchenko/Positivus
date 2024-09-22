@@ -7,24 +7,13 @@
   min-height: 310px;
 
   @include mobile-s {
-  }
-
-  @include mobile-s-above {
+    column-gap: 12px;
   }
 
   @include mobile {
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 27px;
-  }
-
-  @include mobile-above {
-  }
-
-  @include tablet-above {
-  }
-
-  @include desktop-above {
   }
 
   background-color: var(--color-gray);
